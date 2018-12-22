@@ -45,53 +45,6 @@ Created on Wed Dec 12 21:17:02 2018
 #bisection method#
 ######################
 
-# -*- coding: utf-8 -*-
-"""
-MIT: intro to computer science and programming in Python
-PS1_c
-Created on Wed Dec 12 21:17:02 2018
-@author: Kiooola
-"""
-
-
-######################
-#approximation method#
-######################
-
-#total_cost = 1000000
-#annual_salary =  float(input("Enter your starting annual salary: "))
-#semi_annual_raise= 0.07
-#years = 3
-#
-#portion_down_payment = 0.25*total_cost
-#portion_saved= 0
-#r = 0.04
-#current_savings = 0
-#iterations = 0
-#
-## increments saving rate until it meets required down payment
-#while  portion_down_payment - current_savings >= 100 :
-#    current_savings = 0
-##adds salary in 6 month increments to get the total
-#    for i in range (years*2):
-#        current_savings += (annual_salary/2)*portion_saved*((1+semi_annual_raise)**i)*(1+r/2)
-#    portion_saved += .01
-#    iterations +=1
-#    if portion_saved>1:
-#        break
-#    
-#print ("iterations: ",iterations)  
-#if portion_saved > 1:
-#    print ("impossible")
-#else:
-#    print ("approximate saving rate: ", round(portion_saved, 2))
-
-
-
-######################
-#bisection method#
-######################
-
 total_cost = 1000000
 start_salary =  float(input("Enter your starting annual salary: "))
 semi_annual_raise= 0.07
