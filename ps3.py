@@ -1,11 +1,8 @@
 # 6.0001 Problem Set 3
 #
 # The 6.0001 Word Game
-# Created by: Kevin Luu <luuk> and Jenna Wiens <jwiens>
 #
-# Name          : <your name>
-# Collaborators : <your collaborators>
-# Time spent    : <total time>
+# Name          : Kiana Hosseini
 
 import math
 import random
@@ -18,10 +15,6 @@ HAND_SIZE = 7
 SCRABBLE_LETTER_VALUES = {
     "*":0, 'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
-
-# -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -59,10 +52,6 @@ def get_frequency_dict(sequence):
         freq[x] = freq.get(x,0) + 1
     return freq
 	
-
-# (end of helper code)
-# -----------------------------------
-
 #
 # Problem #1: Scoring a word
 #
@@ -121,13 +110,10 @@ def display_hand(hand):
     
     for letter in hand.keys():
         for j in range(hand[letter]):
-             print(letter, end=' ')      # print all on the same line
-    print()                              # print an empty line
+             print(letter, end=' ')      
+    print()                              
 
-#
-# Make sure you understand how this function works and what it does!
-# You will need to modify this for Problem #4.
-#
+
 def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -207,23 +193,22 @@ def is_valid_word(word, hand, word_list):
         for i in VOWELS:
             if word.lower().replace("*",i) in word_list:
                 return True
-#        print("fail_validation_1")
+#       print("fail_validation_1")
         return False
     
     for i in dic_word:
         if i not in hand or hand[i] < dic_word[i]:
-#            print("fail_validation_2")
+#           print("fail_validation_2")
             return False
     
     if word.lower() not in word_list:
-#        print("fail_validation_3")
+#       print("fail_validation_3")
         return False
-        
-    
-    
+          
     return True
 
-#is_valid_word('EVIL',{'e': 1, 'v': 2, 'n': 1, 'i': 1, 'l': 2},word_list)
+
+
 # Problem #5: Playing a hand
 #
 def calculate_handlen(hand):
@@ -269,38 +254,8 @@ def play_hand(hand, word_list):
       returns: the total score for the hand
       
     """
+
     
-    # BEGIN PSEUDOCODE <-- Remove this comment when you implement this function
-    # Keep track of the total score
-    
-    # As long as there are still letters left in the hand:
-        
-        # Display the hand
-        
-        # Ask user for input
-        
-        # If the input is two exclamation points:
-        
-            # End the game (break out of the loop)
-
-            
-        # Otherwise (the input is not two exclamation points):
-
-            # If the word is valid:
-
-                # Tell the user how many points the word earned,
-                # and the updated total score
-
-            # Otherwise (the word is not valid):
-                # Reject invalid word (print a message)
-                
-            # update the user's hand by removing the letters of their inputted word
-            
-
-    # Game is over (user entered '!!' or ran out of letters),
-    # so tell user the total score
-
-    # Return the total score as result of function
     score_total = 0
     
     while calculate_handlen(hand)>0:      
@@ -322,14 +277,13 @@ def play_hand(hand, word_list):
     print ("Ran out of letters. Total score: ", score_total, " points")
     print ("-------------------------")
     return score_total
+
+
 #
 # Problem #6: Playing a game
 # 
 
 
-#
-# procedure you will use to substitute a letter in a hand
-#
 
 def substitute_hand(hand, letter):
     """ 
@@ -414,6 +368,8 @@ def play_game(word_list):
             final_score += max(hand_score,new_hand_score)
         
     
+    print("Total score over all rounds: ", final_score)
+    return final_score
 
 
 #
@@ -424,8 +380,7 @@ def play_game(word_list):
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)
-#    print(is_valid_word("honey",{'n': 1, 'h': 1, '*': 1, 'y': 1, 'd': 1, 'w': 1, 'e': 2},word_list))
-#    play_hand ({'a': 1, 'j': 1, '*': 1, 'e': 1, 'f': 1, 'x': 1, 'r':1}, word_list)
+
 
     
 
